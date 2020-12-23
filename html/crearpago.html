@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Crear Pago</title>
+	
+	<link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Sansita+Swashed&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+	<header>		
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><i class="fas fa-ellipsis-v"></i>Menú</a>
+		</div>
+		<nav>
+			<ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i></i>Ingresar</a></li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-users"></i>Usuarios<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearusuario.html">Crear Usuarios</a></li>
+						<li><a href="listadousuarios.html">Listado Usuario</a></li>
+					</ul> 
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-user-graduate"></i>Capacitaciones<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearcapacitacion.html">Crear Capacitacion</a></li>
+						<li><a href="listarcapacitaciones.html">Listado Capacitaciones</a></li>
+					</ul>
+                </li>
+                <li><a href="administrarasistentes.html"><i class="fas fa-book-reader"></i>Asistentes</a></li>
+				<li><a href="listadovisitas.html"><i class="fas fa-handshake"></i>Visita a Terreno</a></li>
+                <li><a href="listadoaccidentes.html"><i class="fas fa-exclamation-triangle"></i>Accidentes</a></li>
+                <li class="submenu">
+					<a href="#"><i class="fas fa-donate"></i>Pagos<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearpago.html">Crear Pago</a></li>
+						<li><a href="listadopago.html">Listado Pago</a></li>
+					</ul>
+                </li>
+                <li class="submenu">
+					<a href="#"><i class="far fa-comments"></i>Asesorias<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearasesorias.html">Crear Asesoria</a></li>
+						<li><a href="listadoasesorias.html">Listado Asesoria</a></li>
+					</ul>
+                </li>
+                <li><a href="reportes.html"><i class="far fa-file-alt"></i>Reportes</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<picture>
+		<source srcset="../img/img1.jpg" media="(max_width: 480px)" style="width: 100%;">
+		<source srcset="../img/img2.jpg" media="(max_width: 700px)" style="width: 100%;">
+		<img src="../img/img3.jpg" style="width: 100%;">
+	</picture>
+
+	<div class="cabezera">
+		<h1>Asesorías en Prevención de Riesgos Laborales</h1>
+		<h3>Solución completa en prevención de riesgos para su empresa</h3><br> <hr/>
+    </div>
+
+	<main>
+		<h3>Crear pago</h3><br><br>
+		<form action="" class="formulario" id="formulario">
+			<!-- Grupo: Monto de pago -->
+			<div class="formulario__grupo" id="grupo__monto">
+				<label for="monto" class="formulario__label">Monto de pago</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="monto" id="monto" placeholder="Ej: 99.999.999">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El monto de pago debe ser un número entero, mayor o igual a cero, y menor o igual a
+					$99.999.999.</p>
+			</div>
+
+			<!-- Mes -->
+			<div class="formulario__grupo" id="grupo__mes">
+				<label for="mes" class="formulario__label">Mes de pago</label>
+				<div class="formulario__grupo-input">
+					<input list="meses" class="formulario__input" name="mes" id="mes" placeholder="Ej: Enero">
+						<datalist id="meses">
+						<option value="Enero"></option><option value="Febrero"></option><option value="Marzo"></option>
+						<option value="Abril"></option><option value="Mayo"></option><option value="Junio"></option>
+						<option value="Julio"></option><option value="Agosto"></option><option value="Septiembre"></option>
+						<option value="Octubre"></option><option value="Noviembre"></option><option value="Diciembre"></option>
+						</datalist>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El mes de pago debe ser un texto válido dentro de las opciones existentes.</p>
+			</div>
+
+			<!-- Año -->
+			<div class="formulario__grupo" id="grupo__año">
+				<label for="año" class="formulario__label">Año de pago</label>
+				<div class="formulario__grupo-input">
+					<input list="años" class="formulario__input" name="año" id="año" placeholder="Ej: 2010">
+					<datalist id="años">
+						<option value="2010"></option><option value="2011"></option><option value="2012"></option><option value="2013"></option><option value="2014"></option><option value="2015"></option>
+						<option value="2016"></option><option value="2017"></option><option value="2018"></option><option value="2019"></option><option value="2020"></option><option value="2021"></option>
+						<option value="2022"></option><option value="2023"></option><option value="2024"></option><option value="2025"></option><option value="2026"></option><option value="2027"></option>
+						<option value="2028"></option><option value="2029"></option><option value="2030"></option><option value="2031"></option><option value="2032"></option><option value="2033"></option>
+						<option value="2034"></option><option value="2035"></option><option value="2036"></option><option value="2037"></option><option value="2038"></option><option value="2039"></option>
+						<option value="2040"></option><option value="2041"></option><option value="2042"></option><option value="2043"></option><option value="2044"></option><option value="2045"></option>
+						<option value="2046"></option><option value="2047"></option><option value="2048"></option><option value="2049"></option><option value="2050">
+						</datalist>
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El año de pago debe estar entre 2010 y 2050.</p>
+			</div>
+
+			<!-- Rut -->
+			<div class="formulario__grupo" id="grupo__rut">
+				<label for="rut" class="formulario__label">Rut del cliente</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="rut" id="rut" placeholder="Ej: 11111111-1">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Debe ingresar Rut, sin puntos, con guion y digito verificador</p>
+			</div>
+
+			<!-- Grupo: Terminos y Condiciones -->
+			<div class="formulario__grupo" id="grupo__terminos">
+				<label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+					Confirma los datos ingresados
+				</label>
+			</div>
+
+			<!-- Fecha actual -->
+			<div id="fecha"><h4>Fecha actual</h4>
+				<script>
+					var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+					var f=new Date();
+					document.write(f.getDate() + " de " + meses[f.getMonth()] + " del " + f.getFullYear());
+				</script>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-thumbs-down"></i> <b>Error: </b>Campos obligatorios.</p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito"><i class="fab fa-angellist"></i>Formulario enviado exitosamente!</p><br>
+				<br>
+			</div>
+		</form>
+	</main>
+	<script src="../js/javascript.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <footer>
+        <h4>Asesorías en Prevención de Riesgo</h4>
+        <h5>Dirección: Avenida Las Flores #1206, Santiago</h5>
+        <h5>Teléfono: 2 2421 3146</h5>
+    </footer>
+</body>
+</html>

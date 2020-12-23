@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Visitas</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Sansita+Swashed&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/css/tableexport.min.css" integrity="sha512-QNApdXD0OM7mWwz9n+xCNgjfkYe7Usw17xroPYOtsnVQqTQfardTXrrUWyvkcpkmYaeVn3KS0ps0BLbV59KCQg==" crossorigin="anonymous" />
+</head>
+<body>
+   <header>		
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><i class="fas fa-ellipsis-v"></i>Menú</a>
+		</div>
+		<nav>
+			<ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i></i>Ingresar</a></li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-users"></i>Usuarios<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearusuario.html">Crear Usuarios</a></li>
+						<li><a href="listadousuarios.html">Listado Usuario</a></li>
+					</ul> 
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-user-graduate"></i>Capacitaciones<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearcapacitacion.html">Crear Capacitacion</a></li>
+						<li><a href="listarcapacitaciones.html">Listado Capacitaciones</a></li>
+					</ul>
+                </li>
+                <li><a href="administrarasistentes.html"><i class="fas fa-book-reader"></i>Asistentes</a></li>
+				<li><a href="listadovisitas.html"><i class="fas fa-handshake"></i>Visita a Terreno</a></li>
+                <li><a href="listadoaccidentes.html"><i class="fas fa-exclamation-triangle"></i>Accidentes</a></li>
+                <li class="submenu">
+					<a href="#"><i class="fas fa-donate"></i>Pagos<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearpago.html">Crear Pago</a></li>
+						<li><a href="listadopago.html">Listado Pago</a></li>
+					</ul>
+                </li>
+                <li class="submenu">
+					<a href="#"><i class="far fa-comments"></i>Asesorias<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearasesorias.html">Crear Asesoria</a></li>
+						<li><a href="listadoasesorias.html">Listado Asesoria</a></li>
+					</ul>
+                </li>
+                <li><a href="reportes.html"><i class="far fa-file-alt"></i>Reportes</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<picture>
+		<source srcset="../img/img1.jpg" media="(max_width: 480px)" style="width: 100%;">
+		<source srcset="../img/img2.jpg" media="(max_width: 700px)" style="width: 100%;">
+		<img src="../img/img3.jpg" style="width: 100%;">
+	</picture>
+
+	<div class="cabezera">
+		<h1>Asesorías en Prevención de Riesgos Laborales</h1>
+		<h3>Solución completa en prevención de riesgos para su empresa</h3><br> <hr/>
+    </div>
+
+    <main id="mainvisitas">
+        <section>
+            <h2>Visitas a Terreno</h2><br>
+            <table id="listadovisitas" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID Visita</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>RUT Cliente</th>
+                        <th>Nombre Cliente</th>
+                        <th>Validar/Modificar Chequeo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>14/05/2020</td>
+                        <td>15.00 hrs.</td>
+                        <td>20.523.658-5</td>
+                        <td>Empresa 1</td>
+                        <td><button class="validarchequeo" type="button" onclick="validarchequeo()">Validar/Modificar Chequeo</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>22/05/2020</td>
+                        <td>09.00 hrs.</td>
+                        <td>30.523.658-5</td>
+                        <td>Empresa 2</td>
+                        <td><button class="validarchequeo" type="button" onclick="validarchequeo()">Validar/Modificar Chequeo</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>30/06/2020</td>
+                        <td>15.00 hrs.</td>
+                        <td>25.523.123-5</td>
+                        <td>Empresa 3</td>
+                        <td><button class="validarchequeo" type="button" onclick="validarchequeo()">Validar/Modificar Chequeo</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>16/11/2020</td>
+                        <td>18.00 hrs.</td>
+                        <td>35.125.658-5</td>
+                        <td>Empresa 4</td>
+                        <td><button class="validarchequeo" type="button" onclick="validarchequeo()">Validar/Modificar Chequeo</button></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>24/10/2020</td>
+                        <td>09.00 hrs.</td>
+                        <td>27.623.658-5</td>
+                        <td>Empresa 5</td>
+                        <td><button class="validarchequeo" type="button" onclick="validarchequeo()">Validar/Modificar Chequeo</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Asesorías en Prevención de Riesgos Laborales</h4>
+        <h5>Dirección: Avenida Las Flores #1206, Santiago</h5>
+        <h5>Teléfono: 2 2421 3146</h5>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js" integrity="sha512-XmZS54be9JGMZjf+zk61JZaLZyjTRgs41JLSmx5QlIP5F+sSGIyzD2eJyxD4K6kGGr7AsVhaitzZ2WTfzpsQzg==" crossorigin="anonymous"></script>
+    <script>
+        function validarchequeo() {
+            validarchequeo = confirm("¿Desea validar y modificar los chequeos de esta visita?");
+            if (validarchequeo == true) {
+                location.replace("responderchecklist.html");
+            } else if (validarchequeo == false) {
+                location.reload("listadovisitas.html");
+            }
+        };
+    
+        TableExport(document.getElementsByTagName("table"), {
+            headers: true,                      
+            footers: true,                      
+            formats: ["xls", "csv", "txt"],    
+            filename: "id",                     
+            bootstrap: false,                   
+            exportButtons: true,                
+            position: "bottom",                 
+            ignoreRows: null,                   
+            ignoreCols: null,                   
+            trimWhitespace: true,               
+            RTL: false,                         
+            sheetname: "id"                     
+        });
+    </script>
+</body>
+</html>

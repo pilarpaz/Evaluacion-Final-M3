@@ -1,0 +1,738 @@
+/*
+Contenidos:
+
+- Línea 16: General.
+- Línea 60: Cabecera.
+- Línea 75: Menú
+- Línea 353: Secciones.
+- Línea 380: Formularios.
+- Línea 635: Validación.
+- Línea 655: Listados.
+- Línea 673: Lista Plegable.
+- Línea 700: Editar Cliente.
+- Línea 719: Login.
+*/
+
+/* ---- ---- General ---- ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(241, 232, 101);
+    text-align: center;
+    border-radius: 4px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+body {
+	font-family: 'Questrial', sans-serif;
+	background: #E5E5E5;
+}
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+section {
+    text-align: justify;
+    margin: auto;
+    font-family: 'Questrial', sans-serif;
+}
+
+footer {
+    background-color: rgb(241, 232, 101);
+    text-align: center;
+    border-radius: 4px;
+    font-family: 'Questrial', sans-serif;
+}
+
+#informacion > h2 {
+    text-align: center;
+}
+
+/* ---- ---- Cabecera ---- ---- */
+
+picture {
+	background-color: rgb(241, 232, 101);
+	margin: 0px auto;
+}
+
+.cabezera {
+	background-color: rgb(241, 232, 101);
+    text-align: center;
+	font-family: 'Merriweather Sans', sans-serif;
+	padding-top: 0px;
+	margin: 0px ;
+}
+
+/* ---- ---- Menú ---- ---- */
+
+.menu_bar {
+	display:none;
+}
+
+header nav {
+	background:#000000;
+	z-index:1000;
+	max-width: 1600px;
+	width: 100%;
+	margin:0px auto;
+	text-align: center;
+}
+
+header nav ul {
+	list-style:none;
+}
+
+header nav ul li {
+	display:inline-block;
+	position: relative;
+	text-align: justify;
+}
+
+header nav ul li a:hover {
+	background:#ffd102;
+	color: #000000;
+}
+
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+header nav ul li a i {
+	margin-right:10px;
+}
+
+header nav ul li:hover .children {
+	display:block;
+}
+
+header nav ul li .children {
+	display: none;
+	background:rgba(44, 44, 44, 0.733);
+	position: absolute;
+	width: 150%;
+	z-index:1000;
+}
+
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid #ffffff;
+}
+
+header nav ul li .children li a {
+	display: block;
+}
+
+header nav ul li .children li a i {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+}
+
+@media screen and (max-width: 2000px) {
+	body {
+		padding-top:72px;
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#000000;
+	}
+
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+        text-decoration: none;
+        text-align: justify;
+	}
+
+	.menu_bar i {
+		float: right;
+		font-size: 20px;
+	}
+
+	header nav {
+		width: 20%;
+		height: calc(100% - 80px);
+		position: fixed;
+		right:100%;
+		margin: 1;
+		overflow: auto;
+		text-align: justify;
+	}
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid #ffffff;
+	}
+
+	header nav ul li a {
+		display: block;
+	}
+
+	header nav ul li:hover .children {
+		display: none;
+	}
+
+	header nav ul li .children {
+		width: 100%;
+        position: relative;
+	}
+
+	header nav ul li .children li a {
+		margin-left:1px;
+	}
+
+	header nav ul li .caret {
+		float: right;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	body {
+		padding-top:67px;
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#000000;
+	}
+
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+        text-decoration: none;
+        text-align: justify;
+	}
+
+	.menu_bar i {
+		float: right;
+		font-size: 20px;
+	}
+
+	header nav {
+		width: 70%;
+		height: calc(100% - 80px);
+		position: fixed;
+		right:100%;
+		margin: 1;
+		overflow: auto;
+        text-align: justify;
+        
+	}
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid #ffffff;
+	}
+
+	header nav ul li a {
+		display: block;
+	}
+
+	header nav ul li:hover .children {
+		display: none;
+	}
+
+	header nav ul li .children {
+		width: 100%;
+        position: relative;
+	}
+
+	header nav ul li .children li a {
+		margin-left:1px;
+	}
+
+	header nav ul li .caret {
+		float: right;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	body {
+		padding-top:67px;
+	}
+
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#000000;
+	}
+
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+        text-decoration: none;
+        text-align: justify;
+	}
+
+	.menu_bar i {
+		float: right;
+		font-size: 20px;
+	}
+
+	header nav {
+		width: 80%;
+		height: calc(100% - 80px);
+		position: fixed;
+		right:100%;
+		margin: 1;
+		overflow: auto;
+		text-align: justify;
+	}
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid #ffffff;
+	}
+
+	header nav ul li a {
+		display: block;
+	}
+
+	header nav ul li:hover .children {
+		display: none;
+	}
+
+	header nav ul li .children {
+		width: 100%;
+        position: relative;
+	}
+
+	header nav ul li .children li a {
+		margin-left:1px;
+	}
+
+	header nav ul li .caret {
+		float: right;
+	}
+}
+
+/* ---- ---- Secciones ---- ---- */
+
+.columnas {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+}
+
+.maincolumnas:after {
+    content: "";
+    display: table;
+    clear: both;
+    margin: auto;
+}
+
+#clearfix {
+    overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .columnas {
+        width: 100%;
+    }
+}
+
+/* ---- ---- Formularios ---- ---- */
+
+#formulario, h2, form {
+    text-align: left;
+}
+
+input {
+    align-items: center;
+    font-family: 'Questrial', sans-serif;
+}
+
+input {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: rgb(36, 33, 23);
+    max-width: 100%;
+    outline: none;
+    padding: 7px 8px;
+}
+
+textarea {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: rgb(36, 33, 23);
+    max-width: 100%;
+    outline: none;
+    padding: 7px 25px;
+    font-family: 'Questrial', sans-serif;
+}
+
+input[type="submit"] {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: rgb(19, 19, 18);
+    color: rgb(235, 231, 217);
+    padding: 8px 14px;
+    font-weight: bold;
+    border: 50px;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+}
+
+input[type="submit"]:hover {
+    background: rgb(54, 54, 40);
+}
+
+#modificar {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: rgb(85, 85, 84);
+    color: rgb(235, 231, 217);
+    padding: 8px 14px;
+    font-weight: bold;
+    border: 50px;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+}
+
+#modificar2 {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: rgb(85, 85, 84);
+    color: rgb(235, 231, 217);
+    padding: 8px 14px;
+    font-weight: bold;
+    border: 50px;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+}
+
+#modificar3 {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: rgb(85, 85, 84);
+    color: rgb(235, 231, 217);
+    padding: 8px 14px;
+    font-weight: bold;
+    border: 50px;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+}
+
+#modificar:hover {
+    background: rgb(138, 138, 136);
+}
+
+#modificar2:hover {
+    background: rgb(138, 138, 136);
+}
+
+#modificar3:hover {
+    background: rgb(138, 138, 136);
+}
+
+button[type="button"] {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: rgb(19, 19, 18);
+    color: rgb(235, 231, 217);
+    padding: 8px 14px;
+    font-weight: bold;
+    border: 50px;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+}
+
+button[type="button"]:hover {
+    background: rgb(54, 54, 40);
+}
+
+select {
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: rgb(36, 33, 23);
+    max-width: 100%;
+    outline: none;
+    padding: 7px 25px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+}
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+	border: 3px solid #1eff00;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #f66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 16px;
+	color: #13a700;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+
+	.formulario__grupo-terminos, 
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		grid-column: 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}
+
+/* ----- -----  Validación ----- ----- */
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #ec0000;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #ff0101;
+}
+
+/* ---- ---- Listados ---- ---- */
+
+table {
+    border: hidden;
+    list-style: none;
+}
+
+tr td {
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: rgb(223, 218, 192);
+    border: 1px solid aliceblue;
+    max-width: 100%;
+    outline: none;
+    padding: 7px 25px;
+    font-family: 'Questrial', sans-serif;
+}
+
+/* ---- ---- Lista Plegable ---- ---- */
+
+.plegable {
+    height: 0;
+    overflow: auto;
+}
+
+.listaplegable {
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 2px solid rgb(19, 20, 20);
+    max-width: 100%;
+    outline: none;
+    padding: 7px 25px;
+    font-family: 'Questrial', sans-serif;
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .plegable {
+        height: 0;
+        overflow: auto;
+        text-align: left;
+    }
+}
+
+
+/* ---- ---- Editar Cliente ---- ---- */
+
+label span {
+font-size: 11px;
+}
+
+label.error {
+	color: red;
+	font-size: 12px;
+	display: block;
+	margin-top: 1px;
+}
+
+input.error, textarea.error {
+	border: 3px solid red;
+	font-weight: 300;
+	color: red;
+}
+
+/* ---- ---- login ---- ---- */
+
+#ingresar{
+	background-color: #000000c2;
+	width: 380px;
+	max-width: 50%;
+	padding: 45px;
+	margin: auto;
+	border: 1px solid #000;
+	border-radius: 10px;
+	font-family: 'Questrial', sans-serif;
+	box-shadow: 4px 4px 4px hsla(0, 0%, 12%, 0.685);
+	color: #ffffff;
+	
+}
+
+.send {
+	background: rgb(255, 255, 3);
+}
+

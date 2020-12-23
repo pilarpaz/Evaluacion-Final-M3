@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Sansita+Swashed&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <header>		
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><i class="fas fa-ellipsis-v"></i>Menú</a>
+		</div>
+		<nav>
+			<ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i></i>Ingresar</a></li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-users"></i>Usuarios<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearusuario.html">Crear Usuarios</a></li>
+						<li><a href="listadousuarios.html">Listado Usuario</a></li>
+					</ul> 
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-user-graduate"></i>Capacitaciones<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearcapacitacion.html">Crear Capacitacion</a></li>
+						<li><a href="listarcapacitaciones.html">Listado Capacitaciones</a></li>
+					</ul>
+                </li>
+                <li><a href="administrarasistentes.html"><i class="fas fa-book-reader"></i>Asistentes</a></li>
+				<li><a href="listadovisitas.html"><i class="fas fa-handshake"></i>Visita a Terreno</a></li>
+                <li><a href="listadoaccidentes.html"><i class="fas fa-exclamation-triangle"></i>Accidentes</a></li>
+                <li class="submenu">
+					<a href="#"><i class="fas fa-donate"></i>Pagos<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearpago.html">Crear Pago</a></li>
+						<li><a href="listadopago.html">Listado Pago</a></li>
+					</ul>
+                </li>
+                <li class="submenu">
+					<a href="#"><i class="far fa-comments"></i>Asesorias<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearasesorias.html">Crear Asesoria</a></li>
+						<li><a href="listadoasesorias.html">Listado Asesoria</a></li>
+					</ul>
+                </li>
+                <li><a href="reportes.html"><i class="far fa-file-alt"></i>Reportes</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<picture>
+		<source srcset="../img/img1.jpg" media="(max_width: 480px)" style="width: 100%;">
+		<source srcset="../img/img2.jpg" media="(max_width: 700px)" style="width: 100%;">
+		<img src="../img/img3.jpg" style="width: 100%;">
+	</picture>
+
+	<div class="cabezera">
+		<h1>Asesorías en Prevención de Riesgos Laborales</h1>
+		<h3>Solución completa en prevención de riesgos para su empresa</h3><br> <hr/>
+    </div>
+
+    <main>
+        <section id="formulario">
+            <h2>Crear Usuario</h2><br>
+            <form>
+                <p>Nombres:
+                <br><input type="text" name="nombres" size="40"></p>
+                <p>Apellidos:
+                <br><input type="text" name="apellidos" size="40"></p>
+                <p>Fecha de nacimiento:
+                <br><input type="date" name="fecha nacimiento" size="40"></p>
+                <p>RUN:
+                <br><input type="text" name="run" size="40"></p>   
+                <p>Tipo de usuario:
+                    <br><select name="tipo usuario">
+                    <option value="1">Cliente</option> 
+                        <option value="2">Profesional</option> 
+                        <option value="3">Administrativo</option>
+                    </select> 
+                    <p>
+                        <input type="submit" value="Crear Usuario">
+                    </p>   
+                </p>
+                <br>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Asesorías en Prevención de Riesgos Laborales</h4>
+        <h5>Dirección: Avenida Las Flores #1206, Santiago</h5>
+        <h5>Teléfono: 2 2421 3146</h5>
+    </footer>
+</body>
+</html>

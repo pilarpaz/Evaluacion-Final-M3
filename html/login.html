@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <script>
+    function onRutBlur(obj) {
+        if (VerificaRut(obj.value))
+        alert("Rut ingresado correctamente");
+        else 
+        alert("Rut ingresado es incorrecto");
+    }
+    </script>
+    <script src="../js/jquery.js"></script>
+</head>
+<body>
+    <header>		
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><i class="fas fa-ellipsis-v"></i>Menú</a>
+		</div>
+		<nav>
+			<ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i></i>Ingresar</a></li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-users"></i>Usuarios<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearusuario.html">Crear Usuarios</a></li>
+						<li><a href="listadousuarios.html">Listado Usuario</a></li>
+					</ul> 
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-user-graduate"></i>Capacitaciones<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearcapacitacion.html">Crear Capacitacion</a></li>
+						<li><a href="listarcapacitaciones.html">Listado Capacitaciones</a></li>
+					</ul>
+                </li>
+                <li><a href="administrarasistentes.html"><i class="fas fa-book-reader"></i>Asistentes</a></li>
+				<li><a href="listadovisitas.html"><i class="fas fa-handshake"></i>Visita a Terreno</a></li>
+                <li><a href="listadoaccidentes.html"><i class="fas fa-exclamation-triangle"></i>Accidentes</a></li>
+                <li class="submenu">
+					<a href="#"><i class="fas fa-donate"></i>Pagos<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearpago.html">Crear Pago</a></li>
+						<li><a href="listadopago.html">Listado Pago</a></li>
+					</ul>
+                </li>
+                <li class="submenu">
+					<a href="#"><i class="far fa-comments"></i>Asesorias<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearasesorias.html">Crear Asesoria</a></li>
+						<li><a href="listadoasesorias.html">Listado Asesoria</a></li>
+					</ul>
+                </li>
+                <li><a href="reportes.html"><i class="far fa-file-alt"></i>Reportes</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
+			</ul>
+		</nav>
+    </header>
+    
+    <picture>
+		<source srcset="../img/img1.jpg" media="(max_width: 480px)" style="width: 100%;">
+		<source srcset="../img/img2.jpg" media="(max_width: 700px)" style="width: 100%;">
+		<img src="../img/img3.jpg" style="width: 100%;">
+	</picture>
+
+	<div class="cabezera">
+		<h1>Asesorías en Prevención de Riesgos Laborales</h1>
+		<h3>Solución completa en prevención de riesgos para su empresa</h3><br> <hr/>
+    </div>
+
+    <main>
+        <div id="ingresar" name="ingresar" >
+            <h2>Ingresar</h2><br>
+            <form  id="login" name="login" method="get" action="listadousuarios.html" >
+              
+              <p>Ingrese datos de Usuario</p>
+              <p>
+                Ingrese Rut: <input type="text" id="txtRut" placeholder="11111111-1" onblur="onRutBlur(this);" />
+              </p>
+              <p>
+                <label for="contraseña"> Contraseña:</label>
+                <input id="contraseña" type="password" name="contraseña" placeholder="*********" >
+              </p>
+                <p>
+                  Todos los campos son obligatorios
+                </p>
+                <p>
+                <input class="submit"  id="send" type="submit" value="Enviar">
+              </p>
+                
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <h4>Asesorías en Prevención de Riesgos Laborales</h4>
+        <h5>Dirección: Avenida Las Flores #1206, Santiago</h5>
+        <h5>Teléfono: 2 2421 3146</h5>
+    </footer>
+</body>
+</html>

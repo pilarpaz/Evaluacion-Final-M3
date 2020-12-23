@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Asistentes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Sansita+Swashed&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@600&display=swap">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header>		
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><i class="fas fa-ellipsis-v"></i>Menú</a>
+		</div>
+		<nav>
+			<ul>
+                <li><a href="index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i></i>Ingresar</a></li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-users"></i>Usuarios<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearusuario.html">Crear Usuarios</a></li>
+						<li><a href="listadousuarios.html">Listado Usuario</a></li>
+					</ul> 
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="fas fa-user-graduate"></i>Capacitaciones<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearcapacitacion.html">Crear Capacitacion</a></li>
+						<li><a href="listarcapacitaciones.html">Listado Capacitaciones</a></li>
+					</ul>
+                </li>
+                <li><a href="administrarasistentes.html"><i class="fas fa-book-reader"></i>Asistentes</a></li>
+				<li><a href="listadovisitas.html"><i class="fas fa-handshake"></i>Visita a Terreno</a></li>
+                <li><a href="listadoaccidentes.html"><i class="fas fa-exclamation-triangle"></i>Accidentes</a></li>
+                <li class="submenu">
+					<a href="#"><i class="fas fa-donate"></i>Pagos<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearpago.html">Crear Pago</a></li>
+						<li><a href="listadopago.html">Listado Pago</a></li>
+					</ul>
+                </li>
+                <li class="submenu">
+					<a href="#"><i class="far fa-comments"></i>Asesorias<i class="caret fas fa-angle-down"></i></a>
+					<ul class="children">
+						<li><a href="crearasesorias.html">Crear Asesoria</a></li>
+						<li><a href="listadoasesorias.html">Listado Asesoria</a></li>
+					</ul>
+                </li>
+                <li><a href="reportes.html"><i class="far fa-file-alt"></i>Reportes</a></li>
+                <li><a href="contacto.html"><i class="fas fa-envelope"></i>Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<picture>
+		<source srcset="../img/img1.jpg" media="(max_width: 480px)" style="width: 100%;">
+		<source srcset="../img/img2.jpg" media="(max_width: 700px)" style="width: 100%;">
+		<img src="../img/img3.jpg" style="width: 100%;">
+	</picture>
+
+	<div class="cabezera">
+		<h1>Asesorías en Prevención de Riesgos Laborales</h1>
+		<h3>Solución completa en prevención de riesgos para su empresa</h3><br> <hr/>
+	</div>
+
+    <main id="mainasistentes">
+        <section>
+            <h2>Listado de Asistentes</h2><br>
+            <table id="listadoasistentes" class="display responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID Asistente</th>
+                        <th>Nombre Completo</th>
+                        <th>Edad</th>
+                        <th>Correo Electrónico</th>
+                        <th>Teléfono</th>
+                        <th>Datos Capacitación</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Felipe Maza</td>
+                        <td>21</td>
+                        <td>felipe@algo.cl</td>
+                        <td>952364125</td>
+                        <td>11/11/2020 - 13.00 hrs. - Empresa 1</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Laura Castro</td>
+                        <td>25</td>
+                        <td>laura@algo.cl</td>
+                        <td>952458965</td>
+                        <td>21/12/2020 - 09.00 hrs. - Empresa 2</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Claudio López</td>
+                        <td>31</td>
+                        <td>claudio@algo.cl</td>
+                        <td>912684125</td>
+                        <td>05/11/2020 - 18.00 hrs. - Empresa 3</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Pamela Alarcón</td>
+                        <td>45</td>
+                        <td>pamela@algo.cl</td>
+                        <td>912458547</td>
+                        <td>14/12/2020 - 18.00 hrs. - Empresa 4</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>José Díaz</td>
+                        <td>32</td>
+                        <td>jose@algo.cl</td>
+                        <td>954523125</td>
+                        <td>03/10/2020 - 13.00 hrs. - Empresa 5</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Luis Fuentes</td>
+                        <td>28</td>
+                        <td>luis@algo.cl</td>
+                        <td>952364125</td>
+                        <td>22/09/2020 - 09.00 hrs. - Empresa 6</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Camila Pérez</td>
+                        <td>36</td>
+                        <td>camila@algo.cl</td>
+                        <td>951256125</td>
+                        <td>15/11/2020 - 13.00 hrs. - Empresa 7</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sonia Rojas</td>
+                        <td>27</td>
+                        <td>sonia@algo.cl</td>
+                        <td>952332785</td>
+                        <td>21/10/2020 - 09.00 hrs. - Empresa 8</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Felipe Contreras</td>
+                        <td>31</td>
+                        <td>felipe@algo.cl</td>
+                        <td>952156325</td>
+                        <td>18/12/2020 - 18.00 hrs. - Empresa 9</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Carla Ríos</td>
+                        <td>34</td>
+                        <td>carla@algo.cl</td>
+                        <td>952151236</td>
+                        <td>30/09/2020 - 09.00 hrs. - Empresa 10</td>
+                        <td><input type="submit" value="Eliminar Asistente"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <br><br><br>
+			<h2>¿Desea agregar un nuevo asistente?</h2><br><br>
+			<form name="basic-form1" id="basic-form1" action="#" method="POST">
+				<p>ID Asistente:
+					<label for="idasistente"><br><span>(Numero mayor a 0 y menor a 10000)</span></label>    
+					<br><input type="text" id="idasistente" name="idasistente" placeholder="Ej: 12345" size="40">
+				</p><br> 
+				
+				<p>Nombre completo:
+					<label for="nombrecompleto"><br><span>(Maximo 100 caracteres)</span></label>
+					<br><input type="text" id="nombrecompleto" name="nombrecompleto" placeholder="Ej: Pedro Pablo" size="40">
+				</p><br>
+					
+				<p>Edad:
+					<label for="edad"><br><span>(Digito mayor a 0 y menor a 10000)</span></label>
+					<br><input type="text" id="edad" name="edad" placeholder="Ej: 37" size="40">
+				</p><br>
+
+				<p>Correo Electrónico:
+					<label for="correoelectronico"><br><span>(Correo valido)</span></label>
+					<br><input type="text" id="correoelectronico" name="correoelectronico" placeholder="Ej: micorreo@gmail.com" size="40">
+				</p><br>
+
+				<p>Teléfono:
+					<label for="telefono"><br><span>(Maximo 15 digitos)</span></label>
+					<br><input type="text" id="telefono" name="telefono" placeholder="Ej: +56 9 123456789" size="40">
+				</p><br>
+
+				<p>Fecha y Hora de Capacitacion:
+					<label for="fechahora"><br><span>(Maximo 30 caracteres)</span></label>
+					<br><input type="text" id="fechahora" name="fechahora" placeholder="dd/mm/aaaa - hh/mm/ss" size="40">
+				</p><br> 
+					<input type="submit" id="btneditarcliente" name="btneditarcliente" value="Crear Asistente">
+				</p>
+				<br> 
+			</form>
+        </section>
+    </main>
+
+    <footer>
+        <h4>Asesorías en Prevención de Riesgo</h4>
+        <h5>Dirección: Avenida Las Flores #1206, Santiago</h5>
+        <h5>Teléfono: 2 2421 3146</h5>
+    </footer>
+</body>
+</html>
